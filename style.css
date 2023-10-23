@@ -1,16 +1,12 @@
-@import url('https://fonts.googleapis.com/css2?family=Grandstander:wght@600&family=Nunito:wght@200&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lora&display=swap');
 *{
     margin:0;
     padding:0;
-    font-family: 'Grandstander', cursive;
-    font-family: 'Nunito', sans-serif;
+    font-family: 'Lora', serif;
     box-sizing: border-box;
+    background-color: black;
 }
-body{
-    background-color: blueviolet;
-    color: white;
 
-}
 #header{
     width: 100%;
     height: 100vh;
@@ -18,9 +14,16 @@ body{
     background-size: cover;
     background-position: center;
 }
+
+#homepage{
+    color: white;
+    font-size: 30px;
+    text-decoration: none;
+}
+
 nav{
-    background-color: white;
-    color: black;
+    background-color: black;
+    color: white;
     padding-left: 30px;
     padding-right: 30px;
     padding-top: 20px;
@@ -30,35 +33,68 @@ nav{
     justify-content: space-between;
     flex-wrap: wrap;
 }
-p{
-    font-size: 30px;
-}
+
 nav ul li {
     display: inline-block;
-    list-style: none;
     margin: 5px 10px;
 }
+
 nav ul li a {
-    color: black;
+    color: white;
     text-decoration: none;
     font-size: 15px;
 }
-a::before {
-    content: '';
-    position: absolute;
-    width: 100%;
-    height: 4px;
-    border-radius: 4px;
-    background-color: #18272F;
-    bottom: 0;
+
+li a:hover {
+text-decoration: none;
+}
+
+li a {
+text-decoration: none;
+position: relative;
+
+}
+li a:after {
+border-radius: 1em;
+border-top: .1em solid white;
+content: "";
+position: absolute;
+    right: 100%;
+    bottom: .2px;
     left: 0;
-    transform-origin: right;
-    transform: scaleX(0);
-    transition: transform .3s ease-in-out;
+transition: right 0.5s cubic-bezier(0.25,0.5,0,1);
+}
+
+li a:hover:after {
+right: 0;
+}
+
+#self-intro1{
+    color: white;
+    font-size: 3rem;
+    padding: 5rem;
+    background-color: transparent;
+}
+
+#self-intro2{
+    color: white;
+    text-align: center;
+}
+.wave {
+    animation-name: wave-animation;  /* Refers to the name of your @keyframes element below */
+    animation-duration: 2.5s;        /* Change to speed up or slow down */
+    animation-iteration-count: infinite;  /* Never stop waving :) */
+    transform-origin: 70% 70%;       /* Pivot around the bottom-left palm */
+    display: inline-block;
   }
   
-  a:hover::before {
-    transform-origin: left;
-    transform: scaleX(1);
+  @keyframes wave-animation {
+      0% { transform: rotate( 0.0deg) }
+     10% { transform: rotate(14.0deg) }  /* The following five values can be played with to make the waving more or less extreme */
+     20% { transform: rotate(-8.0deg) }
+     30% { transform: rotate(14.0deg) }
+     40% { transform: rotate(-4.0deg) }
+     50% { transform: rotate(10.0deg) }
+     60% { transform: rotate( 0.0deg) }  /* Reset for the last half to pause */
+    100% { transform: rotate( 0.0deg) }
   }
-  
